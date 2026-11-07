@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#c9f0dc">
+    <meta name="description" content="Jogo da velha para duas pessoas, com visual arcade em pixel art.">
+    <title>Jogo da Velha Pixel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topline">
+        <a class="brand" href="./" aria-label="Jogo da Velha Pixel, início">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>ARCADE DE BOLSO</span>
+        </a>
+        <span class="build-tag">JOGO 001 <span aria-hidden="true">/</span> 2 PLAYERS</span>
+      </header>
+
+      <section class="game-layout" aria-labelledby="game-title">
+        <div class="game-main">
+          <div class="title-block">
+            <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> DUAS PESSOAS · UMA TELA</p>
+            <h1 id="game-title">JOGO DA<br><span>VELHA</span></h1>
+          </div>
+
+          <div class="board-frame">
+            <div class="board-topline">
+              <span>CAMPO DE JOGO</span>
+              <span class="round-label">RODADA <b id="round-number">01</b></span>
+            </div>
+            <div class="board" role="group" aria-label="Tabuleiro do jogo da velha">
+              <button class="cell" type="button" data-cell="0" aria-label="Casa 1, vazia"></button>
+              <button class="cell" type="button" data-cell="1" aria-label="Casa 2, vazia"></button>
+              <button class="cell" type="button" data-cell="2" aria-label="Casa 3, vazia"></button>
+              <button class="cell" type="button" data-cell="3" aria-label="Casa 4, vazia"></button>
+              <button class="cell" type="button" data-cell="4" aria-label="Casa 5, vazia"></button>
+              <button class="cell" type="button" data-cell="5" aria-label="Casa 6, vazia"></button>
+              <button class="cell" type="button" data-cell="6" aria-label="Casa 7, vazia"></button>
+              <button class="cell" type="button" data-cell="7" aria-label="Casa 8, vazia"></button>
+              <button class="cell" type="button" data-cell="8" aria-label="Casa 9, vazia"></button>
+            </div>
+            <div class="board-bottomline">
+              <span>INSIRA SUA JOGADA</span>
+              <span class="pixel-heart" aria-hidden="true">♥ ♥ ♥</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="game-rail" aria-label="Controles da partida">
+          <div class="turn-panel">
+            <p class="eyebrow">VEZ DE JOGAR</p>
+            <div class="turn-display" aria-live="polite" aria-atomic="true">
+              <span id="turn-mark" class="turn-mark mark-x" aria-hidden="true">X</span>
+              <span id="game-status">VAI, X!</span>
+            </div>
+            <p class="turn-hint">MARQUE UMA CASA<br>E PASSE O CELULAR</p>
+          </div>
+
+          <div class="players" aria-label="Jogadores">
+            <div class="player-row player-x">
+              <span class="player-symbol" aria-hidden="true">X</span>
+              <span>JOGADOR 01</span>
+              <span class="player-color" aria-hidden="true"></span>
+            </div>
+            <div class="player-row player-o">
+              <span class="player-symbol" aria-hidden="true">O</span>
+              <span>JOGADOR 02</span>
+              <span class="player-color" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <button class="reset-button" id="reset-button" type="button">
+            <span class="reset-icon" aria-hidden="true">↻</span>
+            <span>REINICIAR PARTIDA</span>
+          </button>
+
+          <p class="footer-note">FEITO PRA JOGAR DE PERTO <span aria-hidden="true">✦</span></p>
+        </aside>
+      </section>
+
+      <footer class="page-footer">
+        <span>INSERIR FICHA: AMIZADE</span>
+        <span>© ARCADE DE BOLSO</span>
+      </footer>
+    </main>
+
+    <div class="draw-message" id="draw-message" role="status" aria-live="assertive" aria-atomic="true"></div>
+    <canvas class="flying-tomato" id="flying-tomato" width="96" height="96" aria-hidden="true"></canvas>
+    <div class="win-overlay" id="win-overlay" hidden>
+      <section class="win-panel" id="win-panel" role="dialog" aria-modal="true" aria-labelledby="win-title" aria-describedby="win-copy">
+        <canvas class="win-art" id="win-art" width="128" height="128" aria-hidden="true"></canvas>
+        <p class="win-kicker" id="win-kicker"></p>
+        <h2 class="win-title" id="win-title"></h2>
+        <p class="win-copy" id="win-copy"></p>
+        <button class="win-close" id="win-close" type="button">FECHAR TELA</button>
+      </section>
+    </div>
+  </body>
+</html>
